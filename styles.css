@@ -2,6 +2,7 @@
   --paper: #f2efe8;
   --ink: #1e1b16;
   --faint: #8a8272;
+  --rule: #d6cfc0;
   --accent: #8c4a2f;
 }
 
@@ -10,6 +11,7 @@
     --paper: #161411;
     --ink: #e9e4d8;
     --faint: #7d7666;
+    --rule: #2f2a22;
     --accent: #d08a5f;
   }
 }
@@ -25,52 +27,139 @@
 }
 
 body {
-  min-height: 100svh;
-  display: grid;
-  grid-template-rows: 1fr auto;
   background: var(--paper);
   color: var(--ink);
   font-family: ui-serif, "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
-  padding: clamp(1.75rem, 6vw, 5rem);
   -webkit-font-smoothing: antialiased;
+  padding: 0 clamp(1.5rem, 6vw, 5rem);
+  max-width: 74rem;
+  margin: 0 auto;
 }
 
-main {
-  align-self: center;
+.mono {
+  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
 }
 
-.sentence {
-  font-size: clamp(2rem, 5.2vw, 4.4rem);
-  line-height: 1.18;
-  letter-spacing: -0.018em;
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1.5rem;
+  padding: 1.4rem 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+header .name {
+  color: var(--ink);
+}
+
+header nav {
+  display: flex;
+  gap: 1.6rem;
+  flex-wrap: wrap;
+}
+
+header a {
+  color: var(--faint);
+  text-decoration: none;
+  transition: color 0.25s ease;
+}
+
+header a:hover {
+  color: var(--accent);
+}
+
+.hero {
+  padding: clamp(4rem, 14vh, 9rem) 0 clamp(3rem, 8vh, 5rem);
+}
+
+.hero h1 {
+  font-size: clamp(2.6rem, 7vw, 5.6rem);
+  line-height: 1.08;
+  letter-spacing: -0.022em;
   font-weight: 400;
-  max-width: 22ch;
+  max-width: 18ch;
   text-wrap: balance;
 }
 
-.sentence em {
+.hero h1 em {
   font-style: italic;
-  letter-spacing: 0;
 }
 
-.sentence a {
+.hero p {
+  margin-top: 2.2rem;
+  max-width: 44ch;
+  font-size: 1.125rem;
+  line-height: 1.75;
+  color: var(--faint);
+}
+
+.index {
+  padding: 1rem 0 5rem;
+}
+
+.index .label {
+  color: var(--faint);
+  display: block;
+  margin-bottom: 1.2rem;
+}
+
+.index .entry {
+  display: flex;
+  align-items: baseline;
+  gap: 1.4rem;
+  padding: 1.15rem 0;
+  border-top: 1px solid var(--rule);
   color: inherit;
-  text-decoration-line: underline;
-  text-decoration-thickness: 0.035em;
-  text-underline-offset: 0.14em;
-  text-decoration-color: var(--faint);
-  transition: color 0.25s ease, text-decoration-color 0.25s ease;
+  text-decoration: none;
 }
 
-.sentence a:hover {
+.index .entry:last-child {
+  border-bottom: 1px solid var(--rule);
+}
+
+.entry .num {
+  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  font-size: 0.8rem;
+  color: var(--faint);
+}
+
+.entry .title {
+  font-size: clamp(1.3rem, 2.6vw, 1.9rem);
+  letter-spacing: -0.01em;
+}
+
+.entry .leader {
+  flex: 1;
+  border-bottom: 1px dotted var(--rule);
+  transform: translateY(-0.45em);
+}
+
+.entry .status {
+  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  color: var(--faint);
+}
+
+a.entry {
+  transition: color 0.25s ease;
+}
+
+a.entry:hover .title,
+a.entry:hover .status {
   color: var(--accent);
-  text-decoration-color: var(--accent);
 }
 
 footer {
   display: flex;
   justify-content: space-between;
   gap: 1rem;
+  padding: 1.3rem 0 1.6rem;
+  border-top: 1px solid var(--rule);
   font-size: 0.8125rem;
   letter-spacing: 0.04em;
   color: var(--faint);
@@ -86,4 +175,33 @@ footer a {
 footer a:hover {
   color: var(--accent);
   border-color: var(--accent);
+}
+
+/* 404 page */
+.sentence {
+  font-size: clamp(2rem, 5.2vw, 4.4rem);
+  line-height: 1.18;
+  letter-spacing: -0.018em;
+  font-weight: 400;
+  max-width: 22ch;
+  text-wrap: balance;
+  padding: clamp(4rem, 20vh, 10rem) 0;
+}
+
+.sentence em {
+  font-style: italic;
+}
+
+.sentence a {
+  color: inherit;
+  text-decoration-line: underline;
+  text-decoration-thickness: 0.035em;
+  text-underline-offset: 0.14em;
+  text-decoration-color: var(--faint);
+  transition: color 0.25s ease, text-decoration-color 0.25s ease;
+}
+
+.sentence a:hover {
+  color: var(--accent);
+  text-decoration-color: var(--accent);
 }
