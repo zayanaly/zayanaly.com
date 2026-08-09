@@ -3,17 +3,16 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f2efe8" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#161411" media="(prefers-color-scheme: dark)">
-  <meta name="description" content="Zayan Aly — a public record of research, papers, and useful systems.">
+  <meta name="theme-color" content="#141210">
+  <meta name="description" content="Zayan Aly — robot foundation models and active inference. CS PhD @ UT Dallas.">
   <meta property="og:title" content="Zayan Aly">
-  <meta property="og:description" content="A public record of research, papers, and useful systems.">
+  <meta property="og:description" content="Robot foundation models · active inference — CS PhD @ UT Dallas.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://zayanaly.com/">
   <meta property="og:image" content="https://zayanaly.com/og.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Zayan Aly">
-  <meta name="twitter:description" content="A public record of research, papers, and useful systems.">
+  <meta name="twitter:description" content="Robot foundation models · active inference — CS PhD @ UT Dallas.">
   <meta name="twitter:image" content="https://zayanaly.com/og.png">
   <link rel="canonical" href="https://zayanaly.com/">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
@@ -22,7 +21,7 @@
 </head>
 <body>
   <header>
-    <span class="mono name">Zayan Aly</span>
+    <span class="mono">Zayan Aly</span>
     <nav class="mono" aria-label="Main links">
       <a href="https://github.com/zayanaly">GitHub</a>
       <a href="https://www.linkedin.com/in/zayanaly/">LinkedIn</a>
@@ -32,18 +31,35 @@
   </header>
 
   <main>
-    <section class="hero">
-      <h1>Clear questions. Traceable evidence. <em>Useful systems.</em></h1>
-      <p>I’m Zayan Aly. I build a public record of research, papers, and technical projects — work meant to be inspected, tested, and used. Research should leave a trail.</p>
+    <section class="hero wrap">
+      <div class="headshot" aria-hidden="true"><span>headshot<br>soon</span></div>
+      <p class="role mono"><span class="dot"></span> Robot Foundation Models · Active Inference — CS PhD @ UT Dallas</p>
+      <h1 class="big">
+        <span class="line"><span>Zayan</span></span>
+        <span class="line"><span>Aly</span></span>
+      </h1>
+      <div class="meta mono"><span></span><span>scroll ↓</span></div>
     </section>
 
-    <section class="index" aria-label="Site index">
-      <span class="mono label">Index</span>
+    <div class="marquee" aria-hidden="true">
+      <div class="track">
+        <span>Robot Foundation Models</span><span><em>Active Inference</em></span><span>Research</span><span><em>Papers</em></span><span>Projects</span><span><em>AMI</em></span>
+        <span>Robot Foundation Models</span><span><em>Active Inference</em></span><span>Research</span><span><em>Papers</em></span><span>Projects</span><span><em>AMI</em></span>
+      </div>
+    </div>
+
+    <section class="index wrap" aria-label="Site index">
+      <span class="label mono">Index</span>
       <div class="entry"><span class="num">01</span><span class="title">Research</span><span class="leader"></span><span class="status">in progress</span></div>
       <div class="entry"><span class="num">02</span><span class="title">Papers</span><span class="leader"></span><span class="status">soon</span></div>
-      <a class="entry" href="https://github.com/zayanaly"><span class="num">03</span><span class="title">Projects</span><span class="leader"></span><span class="status">open — github ↗</span></a>
+      <a class="entry" href="https://github.com/zayanaly"><span class="num">03</span><span class="title">Projects</span><span class="leader"></span><span class="status">github ↗</span></a>
       <a class="entry" href="cv.pdf"><span class="num">04</span><span class="title">Résumé</span><span class="leader"></span><span class="status">pdf ↓</span></a>
-      <a class="entry" href="https://ami.zayanaly.com"><span class="num">05</span><span class="title">AMI</span><span class="leader"></span><span class="status">private · invited access ↗</span></a>
+      <a class="entry" href="https://ami.zayanaly.com"><span class="num">05</span><span class="title">AMI</span><span class="leader"></span><span class="status">private access ↗</span></a>
+    </section>
+
+    <section class="cta">
+      <span class="mono">Want the details?</span>
+      <a class="btn" href="https://github.com/zayanaly" id="magnet">Open the work →</a>
     </section>
   </main>
 
@@ -52,6 +68,26 @@
     <span>visits are logged</span>
     <span>zayanaly.com</span>
   </footer>
+
+  <script>
+    const io = new IntersectionObserver((es) => es.forEach((e) => {
+      if (e.isIntersecting) {
+        e.target.style.transitionDelay = `${(e.target.dataset.i % 6) * 70}ms`;
+        e.target.classList.add('in');
+        io.unobserve(e.target);
+      }
+    }), { threshold: 0.15 });
+    document.querySelectorAll('.entry').forEach((el, i) => { el.dataset.i = i; io.observe(el); });
+
+    const btn = document.getElementById('magnet');
+    if (btn && matchMedia('(pointer:fine)').matches) {
+      btn.addEventListener('mousemove', (e) => {
+        const r = btn.getBoundingClientRect();
+        btn.style.transform = `translate(${(e.clientX - r.left - r.width / 2) * .25}px, ${(e.clientY - r.top - r.height / 2) * .35}px)`;
+      });
+      btn.addEventListener('mouseleave', () => { btn.style.transform = ''; });
+    }
+  </script>
   <script data-goatcounter="https://zayanaly.goatcounter.com/count"
           async src="//gc.zgo.at/count.js"></script>
   <script>
