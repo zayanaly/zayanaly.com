@@ -26,7 +26,16 @@
   </main>
   <footer>
     <span>© 2026 Zayan Aly</span>
+    <span>visits are logged</span>
     <span>zayanaly.com</span>
   </footer>
+  <script data-goatcounter="https://zayanaly.goatcounter.com/count"
+          async src="//gc.zgo.at/count.js"></script>
+  <script>
+    if (navigator.sendBeacon) {
+      navigator.sendBeacon('https://zayanaly-visits.zayanaly.workers.dev/hit',
+        JSON.stringify({ page: location.pathname, ref: document.referrer }));
+    }
+  </script>
 </body>
 </html>
