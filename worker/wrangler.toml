@@ -1,8 +1,0 @@
-name = "zayanaly-visits"
-main = "worker.js"
-compatibility_date = "2026-08-01"
-
-[[d1_databases]]
-binding = "DB"
-database_name = "visits"
-database_id = "a33dfc54-1385-4184-a221-3e738e4d0a29"
