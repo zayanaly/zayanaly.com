@@ -7,7 +7,6 @@ The source for Zayan Aly's personal research website.
 - `/` — concise introduction and site index
 - `/about/` — biography and background
 - `/research/` — developing doctoral research direction
-- `/projects/` — Autonomous Machine Intelligence and selected applied work
 - `/cv/` — accessible résumé summary and PDF download
 
 A publications page will be added when there is a public preprint or paper to share.
