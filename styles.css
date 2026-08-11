@@ -425,7 +425,7 @@ a {
 
 .card-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   border-top: 1px solid var(--rule);
   border-left: 1px solid var(--rule);
 }
@@ -584,15 +584,13 @@ a.card:hover .card-arrow {
   color: var(--muted);
 }
 
-.focus-grid,
-.project-grid {
+.focus-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1rem;
 }
 
 .focus-card,
-.project-card,
 .callout {
   padding: clamp(1.35rem, 3vw, 2rem);
   border: 1px solid var(--rule);
@@ -602,8 +600,6 @@ a.card:hover .card-arrow {
 
 .focus-card h2,
 .focus-card h3,
-.project-card h2,
-.project-card h3,
 .callout h2,
 .callout h3 {
   margin: 1.4rem 0 0.7rem;
@@ -614,21 +610,9 @@ a.card:hover .card-arrow {
 }
 
 .focus-card p,
-.project-card p,
 .callout p {
   margin: 0;
   color: var(--muted);
-}
-
-.project-card {
-  min-height: 18rem;
-  display: flex;
-  flex-direction: column;
-}
-
-.project-card .project-link {
-  margin-top: auto;
-  padding-top: 2rem;
 }
 
 .text-link {
@@ -644,42 +628,6 @@ a.card:hover .card-arrow {
 
 .text-link:hover {
   color: var(--accent);
-}
-
-.feature-project {
-  display: grid;
-  grid-template-columns: minmax(0, 0.65fr) minmax(15rem, 0.35fr);
-  gap: clamp(2rem, 7vw, 6rem);
-  padding: clamp(2rem, 6vw, 5rem);
-  border: 1px solid var(--rule);
-  border-radius: 1.3rem;
-  background: var(--surface);
-}
-
-.feature-project h2 {
-  max-width: 12ch;
-  margin: 0.8rem 0 1.2rem;
-  font-family: var(--serif);
-  font-size: clamp(2.7rem, 6vw, 5.8rem);
-  font-weight: 400;
-  letter-spacing: -0.04em;
-  line-height: 0.98;
-}
-
-.feature-project p {
-  max-width: 42rem;
-  color: var(--muted);
-}
-
-.feature-aside {
-  align-self: end;
-  padding-top: 1rem;
-  border-top: 1px solid var(--rule);
-}
-
-.feature-aside p {
-  margin: 0.5rem 0 0;
-  font-size: 0.92rem;
 }
 
 .cv-summary {
@@ -837,8 +785,7 @@ a.card:hover .card-arrow {
   }
 
   .hero-grid,
-  .page-intro-grid,
-  .feature-project {
+  .page-intro-grid {
     grid-template-columns: 1fr;
   }
 
@@ -855,13 +802,8 @@ a.card:hover .card-arrow {
     display: none;
   }
 
-  .focus-grid,
-  .project-grid {
+  .focus-grid {
     grid-template-columns: 1fr;
-  }
-
-  .project-card {
-    min-height: 17rem;
   }
 }
 
