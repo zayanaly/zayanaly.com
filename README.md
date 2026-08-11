@@ -1,14 +1,25 @@
 # zayanaly.com
 
-The source for Zayan Aly's personal research portfolio.
+The source for Zayan Aly's personal research website.
+
+## Site structure
+
+- `/` — concise introduction and site index
+- `/about/` — biography and background
+- `/research/` — developing doctoral research direction
+- `/projects/` — Autonomous Machine Intelligence and selected applied work
+- `/cv/` — accessible résumé summary and PDF download
+
+A publications page will be added when there is a public preprint or paper to share.
 
 ## Design and architecture
 
 - Dependency-free HTML, CSS, and JavaScript
-- Responsive editorial layout
-- Accessible navigation, focus states, and reduced-motion support
-- Static output that can be hosted by GitHub Pages or any ordinary web server
-- No database, tracking scripts, cookies, or proprietary site builder
+- Responsive multi-page layout for GitHub Pages
+- Automatic light/dark theme with a saved manual preference
+- Accessible landmarks, keyboard focus, touch targets, and reduced-motion support
+- Portable files with no proprietary site builder or database
+- Privacy-friendly aggregate traffic measurement through GoatCounter; no custom IP, referrer, or user-agent logging
 
 ## Run locally
 
@@ -20,4 +31,4 @@ Then open `http://localhost:8080`.
 
 ## Publishing
 
-The site is published through GitHub Pages. The custom domain remains registered with Squarespace and can be connected through DNS after the preview is approved.
+The site is published from `main` through GitHub Pages at [zayanaly.com](https://zayanaly.com/). The domain remains registered with Squarespace; GitHub Pages provides the hosting.
